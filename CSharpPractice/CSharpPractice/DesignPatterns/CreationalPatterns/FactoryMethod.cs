@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpPractice.DesignPatterns.CreationalPatterns
+namespace CSharpPractice.DesignPatterns.CreationalPatterns.FactoryMethod
 {
     public interface IProduct
     {
@@ -50,20 +50,18 @@ namespace CSharpPractice.DesignPatterns.CreationalPatterns
     }
 
     class FactoryMethodClient {
-        public static void test()
+        public static void Test()
         {
-            new FactoryMethodClient().Main();
-        }
-        public void Main() { 
-            Console.WriteLine("Concrete Product Creator 1");
-            ClientCode(new ConcreteProductCreator1());
+            Console.WriteLine(":::Factory Method Test:::");
+            var client = new FactoryMethodClient();
+            
+            client.ClientCode(new ConcreteProductCreator1());
+            client.ClientCode(new ConcreteProductCreator2());
 
-            Console.WriteLine("Concrete Product Creator 2");
-            ClientCode(new ConcreteProductCreator2());
+            Console.WriteLine();
         }
 
-        public void ClientCode(ProductCreator creator)
-        {
+        public void ClientCode(ProductCreator creator) {
             creator.SomeOperation();
         }
     }
