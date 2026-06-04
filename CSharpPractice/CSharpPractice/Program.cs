@@ -1,5 +1,6 @@
 ﻿using CSharpPractice.DesignPatterns.CreationalPatterns.FactoryMethod;
 using CSharpPractice.DesignPatterns.CreationalPatterns.AbstractFactory;
+using CSharpPractice.DesignPatterns.CreationalPatterns.Builder;
 
 namespace CSharpPractice
 {
@@ -9,7 +10,7 @@ namespace CSharpPractice
         {
             FactoryMethodClient.Test();
             AbstractFactoryClient.Test();
-
+            BuilderClient.Test();
 
             Console.ReadKey();
         }

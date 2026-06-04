@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSharpPractice.DesignPatterns.CreationalPatterns.AbstractFactory
+﻿namespace CSharpPractice.DesignPatterns.CreationalPatterns.AbstractFactory
 {
     public interface IAbstractFactory {
         IAbstractProductA CreateProductA();
