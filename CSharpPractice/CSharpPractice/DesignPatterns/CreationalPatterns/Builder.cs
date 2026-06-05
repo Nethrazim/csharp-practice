@@ -87,6 +87,8 @@
 
             director.BuildFullFeaturedProduct();
             Console.WriteLine(builder.ReturnProduct().ListParts());
+
+            Console.WriteLine();
         }
 
     }
