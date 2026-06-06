@@ -9,6 +9,7 @@ using CSharpPractice.DesignPatterns.StructuralPatterns.Composite;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Decorator;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Facade;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Flyweight;
+using CSharpPractice.DesignPatterns.StructuralPatterns.Proxy;
 
 
 namespace CSharpPractice
@@ -28,6 +29,7 @@ namespace CSharpPractice
             DecoratorClient.Test();
             FacadeClient.Test();
             FlyweightClient.Test();
+            ProxyClient.Test();
 
             Console.ReadKey();
         }

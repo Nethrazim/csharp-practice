@@ -60,6 +60,7 @@
     {
         public static void Test()
         {
+            Console.WriteLine(":::Flyweight Test:::");
             var factory = new BulletFactory();
 
             var bullets = new List<Bullet>
@@ -74,6 +75,8 @@
             {
                 bullet.Draw();
             }
+
+            Console.WriteLine();
         }
     }
 }
