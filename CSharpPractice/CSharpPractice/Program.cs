@@ -5,6 +5,8 @@ using CSharpPractice.DesignPatterns.CreationalPatterns.Prototype;
 using CSharpPractice.DesignPatterns.CreationalPatterns.Singleton;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Adapter;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Bridge;
+using CSharpPractice.DesignPatterns.StructuralPatterns.Composite;
+using CSharpPractice.DesignPatterns.StructuralPatterns.Decorator;
 
 namespace CSharpPractice
 {
@@ -19,6 +21,8 @@ namespace CSharpPractice
             SingletonClient.Test();
             AdapterClient.Test();
             BridgeClient.Test();
+            CompositeClient.Test();
+            DecoratorClient.Test();
 
             Console.ReadKey();
         }

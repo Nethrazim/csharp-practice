@@ -9,8 +9,6 @@ using System.Threading.Tasks;
  */
 namespace CSharpPractice.DesignPatterns.StructuralPatterns.Adapter
 {
-   
-
     public class LegacyBankApi
     {
         public void MakeBankTransfer(double value)
@@ -18,6 +16,7 @@ namespace CSharpPractice.DesignPatterns.StructuralPatterns.Adapter
             Console.WriteLine($"Processing bank transfer of {value}");
         }
     }
+
     public interface IPaymentProcessor
     {
         void ProcessPayment(decimal amount);
