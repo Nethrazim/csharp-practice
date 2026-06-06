@@ -7,7 +7,9 @@ using CSharpPractice.DesignPatterns.StructuralPatterns.Adapter;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Bridge;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Composite;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Decorator;
-using CSharpPractice.DesignPatterns.StructuralPatterns;
+using CSharpPractice.DesignPatterns.StructuralPatterns.Facade;
+using CSharpPractice.DesignPatterns.StructuralPatterns.Flyweight;
+
 
 namespace CSharpPractice
 {
@@ -25,6 +27,7 @@ namespace CSharpPractice
             CompositeClient.Test();
             DecoratorClient.Test();
             FacadeClient.Test();
+            FlyweightClient.Test();
 
             Console.ReadKey();
         }
