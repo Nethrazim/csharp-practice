@@ -10,6 +10,8 @@ using CSharpPractice.DesignPatterns.StructuralPatterns.Decorator;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Facade;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Flyweight;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Proxy;
+using CSharpPractice.DesignPatterns.BehavioralPatterns.ChainOfResponsability;
+using CSharpPractice.DesignPatterns.BehavioralPatterns.Template;
 
 
 namespace CSharpPractice
@@ -30,6 +32,8 @@ namespace CSharpPractice
             FacadeClient.Test();
             FlyweightClient.Test();
             ProxyClient.Test();
+            ChainOfResponsabilityClient.Test();
+            TemplateClient.Test();
 
             Console.ReadKey();
         }
