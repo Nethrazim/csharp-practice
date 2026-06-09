@@ -10,43 +10,39 @@ using CSharpPractice.DesignPatterns.StructuralPatterns.Decorator;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Facade;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Flyweight;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Proxy;
+using CSharpPractice.DesignPatterns.BehavioralPatterns.Command;
+using CSharpPractice.DesignPatterns.BehavioralPatterns.Iterator;
 using CSharpPractice.DesignPatterns.BehavioralPatterns.ChainOfResponsability;
 using CSharpPractice.DesignPatterns.BehavioralPatterns.Template;
 using CSharpPractice.GarbageCollector;
 
-using static CSharpPractice.GarbageCollector.GarbageCollectorClient;
-using CSharpPractice.DesignPatterns.BehavioralPatterns.Command;
-
-
-namespace CSharpPractice
+namespace CSharpPractice;
+public class Program
 {
-    public class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            FactoryMethodClient.Test();
-            AbstractFactoryClient.Test();
-            BuilderClient.Test();
-            PrototypeClient.Test();
-            SingletonClient.Test();
-            AdapterClient.Test();
-            BridgeClient.Test();
-            CompositeClient.Test();
-            DecoratorClient.Test();
-            FacadeClient.Test();
-            FlyweightClient.Test();
-            ProxyClient.Test();
-            ChainOfResponsabilityClient.Test();
-            TemplateClient.Test();
-            CommandPatternClient.Test();
+        FactoryMethodClient.Test();
+        AbstractFactoryClient.Test();
+        BuilderClient.Test();
+        PrototypeClient.Test();
+        SingletonClient.Test();
+        AdapterClient.Test();
+        BridgeClient.Test();
+        CompositeClient.Test();
+        DecoratorClient.Test();
+        FacadeClient.Test();
+        FlyweightClient.Test();
+        ProxyClient.Test();
+        ChainOfResponsabilityClient.Test();
+        TemplateClient.Test();
+        CommandPatternClient.Test();
+        IteratorClient.Test();
 
+        GarbageCollectorClient.Test();
+        UnmanagedResourceHolder.TestDisposePattern();
 
-            GarbageCollectorClient.Test();
-            UnmanagedResourceHolder.TestDisposePattern();
-
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-            Console.ReadKey();
-        }
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+        Console.ReadKey();
     }
 }
