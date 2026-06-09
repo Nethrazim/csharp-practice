@@ -12,6 +12,10 @@ using CSharpPractice.DesignPatterns.StructuralPatterns.Flyweight;
 using CSharpPractice.DesignPatterns.StructuralPatterns.Proxy;
 using CSharpPractice.DesignPatterns.BehavioralPatterns.ChainOfResponsability;
 using CSharpPractice.DesignPatterns.BehavioralPatterns.Template;
+using CSharpPractice.GarbageCollector;
+
+using static CSharpPractice.GarbageCollector.GarbageCollectorClient;
+using CSharpPractice.DesignPatterns.BehavioralPatterns.Command;
 
 
 namespace CSharpPractice
@@ -34,7 +38,14 @@ namespace CSharpPractice
             ProxyClient.Test();
             ChainOfResponsabilityClient.Test();
             TemplateClient.Test();
+            CommandPatternClient.Test();
 
+
+            GarbageCollectorClient.Test();
+            UnmanagedResourceHolder.TestDisposePattern();
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             Console.ReadKey();
         }
     }
