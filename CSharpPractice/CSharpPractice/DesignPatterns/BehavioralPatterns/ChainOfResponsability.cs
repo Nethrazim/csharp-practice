@@ -1,81 +1,79 @@
 ﻿using System.Data.SqlTypes;
 
-namespace CSharpPractice.DesignPatterns.BehavioralPatterns.ChainOfResponsability
+namespace CSharpPractice.DesignPatterns.BehavioralPatterns.ChainOfResponsability;
+public interface IHandler
 {
-    public interface IHandler
+    IHandler SetNext(IHandler handler);
+    object Handle(object request);
+}
+
+abstract class AbstractHandler : IHandler
+{
+    private IHandler _nextHandler;
+
+    public IHandler SetNext(IHandler handler)
     {
-        IHandler SetNext(IHandler handler);
-        object Handle(object request);
+        this._nextHandler = handler;
+        return handler;
     }
 
-    abstract class AbstractHandler : IHandler
+    public virtual object Handle(object request)
     {
-        private IHandler _nextHandler;
-
-        public IHandler SetNext(IHandler handler)
+        if (this._nextHandler != null)
         {
-            this._nextHandler = handler;
-            return handler;
+            return _nextHandler.Handle(request);
         }
+        return null;
+    }
+}
 
-        public virtual object Handle(object request)
+class MonkeyHandler : AbstractHandler
+{
+    public override object Handle(object request)
+    {
+        if (request.ToString() == "Nut")
         {
-            if (this._nextHandler != null)
-            {
-                return _nextHandler.Handle(request);
-            }
-            return null;
+            return $"Squirrel: I'll eat the {request.ToString()}.\n";
+        }
+        else
+        {
+            return base.Handle(request);
         }
     }
+}
 
-    class MonkeyHandler : AbstractHandler
+class DogHandler : AbstractHandler
+{
+    public override object Handle(object request)
     {
-        public override object Handle(object request)
+        if (request.ToString() == "MeatBall")
         {
-            if (request.ToString() == "Nut")
-            {
-                return $"Squirrel: I'll eat the {request.ToString()}.\n";
-            }
-            else
-            {
-                return base.Handle(request);
-            }
+            return $"Dog: I'll eat the {request.ToString()}.\n";
+        }
+        else
+        {
+            return base.Handle(request);
         }
     }
-
-    class DogHandler : AbstractHandler
+}
+class ChainOfResponsabilityClient
+{
+    public static void Test()
     {
-        public override object Handle(object request)
+        Console.WriteLine(":::ChainOfResponsability Test:::");
+
+        var monkey = new MonkeyHandler();
+        var dog = new DogHandler();
+
+        monkey.SetNext(dog);
+
+
+        foreach(var food in new List<string> { "Nut", "Banana", "Cup of coffee" })
         {
-            if (request.ToString() == "MeatBall")
-            {
-                return $"Dog: I'll eat the {request.ToString()}.\n";
-            }
-            else
-            {
-                return base.Handle(request);
-            }
+            Console.WriteLine($"Client: Who wants a {food}?");
+            Console.WriteLine($"{monkey.Handle(food)}");
         }
-    }
-    class ChainOfResponsabilityClient
-    {
-        public static void Test()
-        {
-            Console.WriteLine(":::ChainOfResponsability Test:::");
 
-            var monkey = new MonkeyHandler();
-            var dog = new DogHandler();
-
-            monkey.SetNext(dog);
-
-
-            foreach(var food in new List<string> { "Nut", "Banana", "Cup of coffee" })
-            {
-                Console.WriteLine($"Client: Who wants a {food}?");
-                Console.WriteLine($"{monkey.Handle(food)}");
-            }
-
-            Console.WriteLine();
-        }
+        Console.WriteLine();
     }
 }
